@@ -1,0 +1,102 @@
+
+# You can add as many OTU blocks as desired or keep each semantic species description in a separate file. 
+OTU = { # ADD THE SPECIES NAME HERE AS ANNOTATION
+  
+  # DATA BLOCK.
+  DATA = {
+
+    # Basic information. # Change 'my_species'
+    uberon-female_organism[this = True] .rdfs-label 'my_hym_species';
+
+    # Full metadata. Remove hashs and change if desired.
+    # cdao-TU:id-4f03cd .iao-denotes hao-female_organism:id-2c5eb8[linksTraits = True, this = True, cls = 'dwc-Organism'] .rdfs-label 'org_my_hym_species';
+    # cdao-TU:id-4f03cd .rdfs-label 'otu_my_hym_species';
+    # cdao-TU:id-4f03cd .iao-denotes gbif-Species;
+
+    # OBS: The full metadata uses information from additional sources such as Darwin Code and GBIF, and ontologies such as the 'Comparative Data Analysis Ontology' (CDAO) and 'Information Artifacts Ontology' (IAO).
+
+  }
+  
+  # TRAITS BLOCK.
+  TRAITS = {
+
+    # EXAMPLES OF SIMPLE SEMANTIC STATEMENTS.
+    
+    # OBS1: 'this' refers to the 'hao-male_organism' labeled as 'my_hym_species'
+    # OBS2: always remember to close each semantic statement with a ';'
+
+    # my_hym_species has a black head.
+    this > hao-head >> pato-black;
+
+    # my_hym_species has a long yellow antenna.
+    this > hao-antenna >> (pato-elongated, pato-yellow);
+
+    # my_hym_species has 11 flagellomeres.
+    this > hao-flagellomere |=| 11;
+
+    # my_hym_species has red legs.
+    this > (hao-fore_leg, hao-mid_leg, hao-hind_leg) >> pato-red;
+
+    # my_hym_species does not have wings.
+    this !> hao-fore_wing;
+    this !> hao-hind_wing;
+
+    # my_hym_species has a short brown ovipositor (in two separate statements).
+    # In this case, you should indicate that both statements refer to the 'same' ovipositor by adding a unique id.
+    # It will be automatically generated if you type 'id tag'. Make sure you copy-paste the same id whenever you refer to the same anatomical entity.
+    this > hao-ovipositor:id-298f74 >> pato-shortened;
+    this > hao-ovipositor:id-298f74 >> pato-brown;
+
+
+    # EXAMPLES OF MORE COMPLEX SEMANTIC STATEMENTS.
+
+    # HIERARCHICAL STATEMENTS.
+    # my_hym_species has a setae on the anterior side of the procoxa.
+    this > hao-procoxa > (bspo-anterior_side > hao-seta_0002299);
+
+    # MEASUREMENTS.
+    # In this case, you will use some concepts and relations from the 'Information Artifact Ontology' (IAO) and 'Units Ontology' (unit).
+
+    # Absolute measurements.
+    # You can get a template by typing 'tmp absolute measurement'.
+    # my_hym_species has a maxillary palp 22 mm long.
+    this > hao-maxillary_palp >> pato-length .iao-is_quality_measured_as iao-measurement_datum:md-8efce3 .iao-has_measurement_unit_label unit-millimeter;
+																					iao-measurement_datum:md-8efce3 .iao-has_measurement_value 22.0;
+     
+    # Relative measurements (same species).
+    # You can get a template by typing 'tmp relative measurement'.
+
+    # Same anatomical entity.
+    # my_hym_species has the mesoscutum 2.5x longer than broad. 
+    this > hao-mesoscutum:id-b0b2bf >> pato-length:id-d75ff6 .iao-is_quality_measured_as iao-measurement_datum:md-cabc87 .iao-has_measurement_unit_label pato-width:id-687d13 << hao-mesoscutum:id-b0b2bf;
+																					iao-measurement_datum:md-cabc87 .iao-has_measurement_value 2.5;
+
+    # OBS1: Note that you are referring to the length and width of a specific anatomical entity. Thus unique ids should be added.
+    # OBS2: Make sure you copy-paste the same id whenever you refer to the same anatomical entity or particular length/width.
+
+    # Different anatomical entities.
+    # my_hym_species has the protibia 3.5x longer than the mesotibia. 
+    this > hao-mesotibia:id-b3e20c >> pato-length:id-3a37d4 .iao-is_quality_measured_as iao-measurement_datum:md-255a5b .iao-has_measurement_unit_label pato-length:id-ffe597 << hao-metatibia:id-994b03;
+																					iao-measurement_datum:md-255a5b .iao-has_measurement_value 3.5;
+
+    # OBS1: Note that you are referring to the length and width of specific anatomical entities. Thus unique ids should be added.
+    # OBS2: Make sure you copy-paste the same id whenever you refer to the same anatomical entity or particular length/width.
+
+    # COMPARISONS.
+    # You can get a template by typing 'tmp comparison'.
+    # Same species. Same anatomical entity.
+    # my_hym_species has labrum longer than broad.
+    this > hao-labrum:id-1ff5fa >> pato-length:id-0061d2 |>| pato-width:id-c60e4b << hao-labrum:id-1ff5fa;
+
+    # Same species. Different anatomical entities.
+    # my_hym_species has mesotarsus shorter than metatarsus.
+    this > hao-mesotarsus:id-73be2c >> pato-length:id-d9a6de |>| pato-length:id-ca6ec1 << hao-metatarsus:id-97fb16;
+
+    # Different species.
+    # this > hao-fore_leg:id-8766bb >> pato-length:id-4884ac |>| pato-length:id-185304[exclude = True];
+
+    # OBS: 'pato-length:id-185304' belongs to another OTU thus should be excluded with [exclude = True]. It was used just as a reference for comparison.
+
+  }
+
+}
