@@ -7,11 +7,12 @@ It is part of [the 10th Congress of the International Society of Hymenopterists 
 
 **[Click this Link to proceed](https://github.com/diegosasso/workshop_ISH2023/wiki)**
 
-### Organizers
 
-- Diego Porto
-- Istvan Miko
-- Sergei Tarasov
+#### Organizers
+
+- [Diego Porto](https://twitter.com/PortoSasso)
+- [Istvan Miko](https://github.com/teleaslamellatus)
+- [Sergei Tarasov](https://www.tarasovlab.com/)
 
 <p align="center">
   <img src="https://github.com/diegosasso/workshop_ISH2023/blob/main/images/wasp.png" width="310" title="Phenospy logo">
