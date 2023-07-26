@@ -13,7 +13,7 @@ OTU = { # ADD THE SPECIES NAME HERE AS ANNOTATION
     # cdao-TU:id-4f03cd .rdfs-label 'otu_my_hym_species';
     # cdao-TU:id-4f03cd .iao-denotes gbif-Species;
 
-    # OBS: The full metadata uses information from additional sources such as Darwin Code and GBIF, and ontologies such as the 'Comparative Data Analysis Ontology' (CDAO) and 'Information Artifacts Ontology' (IAO).
+    # OBS: The full metadata uses information from additional sources such as Darwin Core and GBIF, and ontologies such as the 'Comparative Data Analysis Ontology' (CDAO) and 'Information Artifacts Ontology' (IAO).
 
   }
   
