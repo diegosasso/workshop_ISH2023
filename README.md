@@ -1,4 +1,5 @@
-# Welcome to the Workshop entitled "An introduction to computable phenotype descriptions of Hymenoptera"
+# Welcome to the Workshop! 
+## "An introduction to computable phenotype descriptions of Hymenoptera"
 
 **July 26 (Wednesday) 2023, 15.30-19.30**
 
