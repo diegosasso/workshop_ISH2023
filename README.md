@@ -3,7 +3,7 @@
 
 **July 26 (Wednesday) 2023, 15.30-19.30**
 
-**It is part of [the 10th Congress of the International Society of Hymenopterists in Iaşi, Romania](https://www.hymenopterists.org/2023-congress/#program)***
+It is part of [the 10th Congress of the International Society of Hymenopterists in Iaşi, Romania](https://www.hymenopterists.org/2023-congress/#program)
 
 **[Click this Link to proceed](https://github.com/diegosasso/workshop_ISH2023/wiki)**
 
